@@ -6,7 +6,7 @@ name: Deploy Website
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [ main ]
   
 
   # Allows you to run this workflow manually from the Actions tab
@@ -33,4 +33,4 @@ jobs:
         run: npm install -g surge
       
       - name: Run Surge
-        run: npx surge ./ bootcampapp.surge.sh --token ${{secret.SURGE_TOKEN}}
+        run: npx surge ./ bootcampapp.surge.sh --token ${{secrets.SURGE_TOKEN}}
